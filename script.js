@@ -8,8 +8,8 @@ boxes.forEach(e =>{
     e.addEventListener("click", ()=>{
         if(!isGameOver && e.innerHTML === ""){
             e.innerHTML = turn;
-            cheakWin();
-            cheakDraw();
+            checkWin();
+            checkDraw();
             changeTurn();
         }
     })
@@ -26,7 +26,7 @@ function changeTurn(){
     }
 }
 
-function cheakWin(){
+function checkWin(){
     let winConditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -50,7 +50,7 @@ function cheakWin(){
     }
 }
 
-function cheakDraw(){
+function checkDraw(){
     if(!isGameOver){
         let isDraw = true;
         boxes.forEach(e =>{
